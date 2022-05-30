@@ -16,7 +16,7 @@ from tableauhyperapi import HyperProcess, Connection, TableDefinition, SqlType, 
 import tableauserverclient as TSC
 
 load_dotenv()
-logging.basicConfig(filename="DWTab.log",
+logging.basicConfig(filename=f"DWTab-{datetime.datetime.now}",
                     filemode='w')
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
