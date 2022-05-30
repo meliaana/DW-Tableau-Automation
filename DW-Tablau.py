@@ -190,8 +190,8 @@ def DeleteDataFromDS(server, tableau_auth, ds_id):
         server_response = requests.patch(up_endpt, data=json.dumps(json_request), headers=header)
         logger.info(server_response.status_code, server_response.text)
 
-
-DW_df = DataFromDW()
-createHyperFromDF(New_Hyper_name, DW_df)
-DeleteDataFromDS(tb_server, tb_tableau_auth, old_datasource_id)
-appendHyperToDataSource(tb_server, tb_tableau_auth, old_datasource_item, New_Hyper_name)
+if __name__ == "__main__":
+    DW_df = DataFromDW()
+    createHyperFromDF(New_Hyper_name, DW_df)
+    DeleteDataFromDS(tb_server, tb_tableau_auth, old_datasource_id)
+    appendHyperToDataSource(tb_server, tb_tableau_auth, old_datasource_item, New_Hyper_name)
